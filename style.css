@@ -1,0 +1,208 @@
+body{
+    height: 80vh;
+    background-color: #34495e;
+}
+.loading{
+    margin-top: 100px;
+    height: 100%;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+}
+.maindot {
+  background-color: orange;
+  position: relative;
+    width: 10px;
+    height: 10px;
+    border-radius: 50%;
+}
+.maindot::before, .maindot::after {
+    content: '';
+    display: inline-block;
+    position: absolute;
+  }
+  
+  .maindot::before {
+    left: 0;
+    top: -30px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: black;
+    color: black;
+    transform-origin: 5px 40px;
+    
+    animation: loading 1s ease-in-out infinite;
+
+  }
+  
+  .maindot::after {
+    left: 0;
+    top: -30px;
+    width: 10px;
+    height: 10px;
+    border-radius: 5px;
+    background-color: black;
+    color: black;
+    transform-origin: 5px 40px;
+    animation: loading 1s ease-in-out infinite;
+    animation-delay: 0.25s;
+    
+  }
+  
+  @keyframes loading {
+    0% {
+      transform: rotateZ(0deg);
+    }
+    100% {
+      transform: rotateZ(360deg) ;
+    }
+  }
+  /* -----------------------------START Burger--------------------------------- */
+  .burger:hover .sidecont{
+    width: 200px;
+  }
+  .burger {
+    width: 60px;
+    height: 45px;
+    position: relative;
+    transform: rotate(0deg);
+  }
+  .burger span{
+    display: block;
+  position: absolute;
+  height: 9px;
+  width: 100%;
+  background: white;
+  border-radius: 9px;
+  opacity: 1;
+  left: 0;
+  transform: rotate(0deg);
+  }
+  .burger span:nth-child(1) {
+    top: 0px;
+  }
+  
+  .burger span:nth-child(2),.burger span:nth-child(3) {
+    top: 18px;
+  }
+  
+  .burger span:nth-child(4) {
+    top: 36px;
+  }
+  
+  .burger.open span:nth-child(1) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+  
+  .burger.open span:nth-child(2) {
+    transform: rotate(45deg);
+  }
+  
+  .burger.open span:nth-child(3) {
+    transform: rotate(-45deg);
+  }
+  
+  .burger.open span:nth-child(4) {
+    top: 18px;
+    width: 0%;
+    left: 50%;
+  }
+   
+   /* -----------------------------END Burger--------------------------------- */
+   .cards {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    
+  }
+  
+  .card {
+    margin: 40px;
+    position: relative;
+    max-width: 250px;
+    min-height: 350px;
+    box-shadow: 0 40px 60px -6px black;
+    border-radius: 10%;
+    overflow: hidden;
+    width: 100%;
+  }
+  
+  .card-title {
+    display: block;
+    text-align: center;
+    color: #fff;
+    background-color: #6184a8;
+    padding: 2%;
+    border-top-right-radius: 10px;
+    border-top-left-radius: 10px;
+  }
+  
+  .card img {
+    width: 100%;
+    height: 98%;
+    object-fit: cover;
+    display: block;
+    position: relative;
+    transition: 1s ease-in-out;
+  }
+  
+  figcaption {
+    display: block;
+    font-size: 1.2rem;
+    position: absolute;
+    height: 0;
+    bottom:  0;
+    left: 0;
+    opacity: 0;
+    padding: 18px 8%;
+    background-color: #ffffff0a;
+    transition: 1s ease-in-out;
+    overflow-y: scroll;
+    color: #e7eaff;
+   
+  }
+  
+  .card:hover figcaption  {
+    opacity: 1;
+    height: 100%;
+  }
+  .card:hover .card-title{
+    opacity: 0;
+    transition: 1s ease-in-out;
+  }
+  .card:hover img{
+    
+    transform: translateY(-10px)
+  }
+  
+  h1 {
+    font-size: 2.8rem;
+    color: #fff;
+    margin: 40px 0 20px 0;
+    text-align: center;
+  }
+  /* ----------------------------------- */
+  aside .sidecont{
+    height: 100%;
+  width: 0;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  left: 0;
+  background-color: #111;
+  overflow-x: hidden;
+  transition: 0.5s;
+  padding-top: 60px;
+  }
+  aside .sidecont ul{
+    list-style: none;
+  }
+  aside .sidecont ul a{
+    text-decoration: none;
+    color: white;
+}
