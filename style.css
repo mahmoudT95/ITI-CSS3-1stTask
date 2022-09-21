@@ -2,6 +2,16 @@ body{
     height: 80vh;
     background-color: #34495e;
 }
+h1 {
+  font-size: 2.8rem;
+  color: #fff;
+  margin: 40px 0 20px 0;
+  text-align: center;
+  opacity: 1;
+  transition: 0.5s ease-in-out;
+ 
+}
+/* -----------------------------------START LOADING------------------------------------------- */
 .loading{
     margin-top: 100px;
     height: 100%;
@@ -59,10 +69,11 @@ body{
       transform: rotateZ(360deg) ;
     }
   }
+  /* ----------------------------------END LOADING----------------------------------------- */
+
+
   /* -----------------------------START Burger--------------------------------- */
-  .burger:hover .sidecont{
-    width: 200px;
-  }
+  
   .burger {
     width: 60px;
     height: 45px;
@@ -92,6 +103,13 @@ body{
     top: 36px;
   }
   
+  .burger.open{
+    position: absolute;
+    left: 75%;
+   
+    z-index: 99;
+    transition: 3s ease-in-out;
+  }
   .burger.open span:nth-child(1) {
     top: 18px;
     width: 0%;
@@ -113,6 +131,9 @@ body{
   }
    
    /* -----------------------------END Burger--------------------------------- */
+
+
+   /* -----------------------------START CARD-------------------------------- */
    .cards {
     width: 100%;
     display: flex;
@@ -140,6 +161,7 @@ body{
     padding: 2%;
     border-top-right-radius: 10px;
     border-top-left-radius: 10px;
+    transition: 1s ease-in-out;
   }
   
   .card img {
@@ -173,20 +195,21 @@ body{
   }
   .card:hover .card-title{
     opacity: 0;
-    transition: 1s ease-in-out;
+    
   }
   .card:hover img{
     
     transform: translateY(-10px)
   }
   
-  h1 {
-    font-size: 2.8rem;
-    color: #fff;
-    margin: 40px 0 20px 0;
-    text-align: center;
-  }
-  /* ----------------------------------- */
+  /*---------------------------END CARD-------------------------------------------- */
+
+  
+  /* --------------------------START SIDE----------------------------------------- */
+ aside{
+  position: relative;
+  width: 20%;
+ }
   aside .sidecont{
     height: 100%;
   width: 0;
@@ -199,6 +222,9 @@ body{
   transition: 0.5s;
   padding-top: 60px;
   }
+  aside .sidecontopen{
+    width: 20%;
+  }
   aside .sidecont ul{
     list-style: none;
   }
@@ -206,3 +232,5 @@ body{
     text-decoration: none;
     color: white;
 }
+
+ 
